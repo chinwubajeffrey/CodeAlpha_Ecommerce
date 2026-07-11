@@ -4,7 +4,15 @@ import AuthRouter from "./routes/auth.js";
 import ProductRouter from "./routes/products.js";
 import OrderRouter from "./routes/orders.js";
 import CartRouter from "./routes/cart.js";
+import cors from "cors";
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 app.use("/api/auth", AuthRouter);

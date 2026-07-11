@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProductCard = () => {
-  return <div></div>;
+  return <div>ProductCard</div>;
 };
 
 export default ProductCard;
