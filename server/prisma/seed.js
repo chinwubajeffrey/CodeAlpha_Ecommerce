@@ -1,44 +1,51 @@
-import { prisma } from "../src/lib/prisma.js";
+import prisma from "../src/lib/prisma.js";
 const products = [
   {
-    name: "Wireless Headphones",
-    description: "High quality over-ear headphones with noise cancellation.",
+    name: "Wedding Cake",
+    description: "Multiple layered cakes, with gorgeous glazing and frostings",
     price: 89.99,
     stock: 20,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+    category: "Food",
+    image:
+      "https://res.cloudinary.com/df8lfmv1j/image/upload/v1783981304/jason-leung-fXAuCMEYGY4-unsplash_fmgyc1.jpg",
   },
   {
-    name: "Running Shoes",
-    description: "Lightweight and breathable shoes for daily runners.",
+    name: "Vanilla Sponge Cakes",
+    description:
+      "Fluffy and Light Vanilla Sponge Cakes, healthy and suitable for relaxation",
     price: 59.99,
     stock: 15,
-    category: "Footwear",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+    category: "Food",
+    image:
+      "https://res.cloudinary.com/df8lfmv1j/image/upload/v1783981403/aneta-voborilova-Rj1IWO8IozE-unsplash_quitfs.jpg",
   },
   {
-    name: "Leather Backpack",
-    description: "Genuine leather backpack with laptop compartment.",
+    name: "Birthday Cake",
+    description:
+      "Birthday cake for another successful year well spent by you or not",
     price: 120.0,
     stock: 8,
-    category: "Bags",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400",
+    category: "Food",
+    image:
+      "https://res.cloudinary.com/df8lfmv1j/image/upload/v1783981277/stephen-wheeler-LRIQuZyxKRM-unsplash_knfcpy.jpg",
   },
   {
-    name: "Mechanical Keyboard",
-    description: "TKL layout mechanical keyboard with blue switches.",
+    name: "Chocolate Cake",
+    description: "Taste and see the chococolate beauty",
     price: 75.0,
     stock: 12,
-    category: "Electronics",
-    image: "https://images.unsplash.com/photo-1601445638532-2f1f2c5f6e4b?w=400",
+    category: "food",
+    image:
+      "https://res.cloudinary.com/df8lfmv1j/image/upload/v1783981274/braggsdiner-F8RKds2YdqA-unsplash_wru4ht.jpg",
   },
   {
-    name: "Sunglasses",
-    description: "UV400 polarized sunglasses with titanium frame.",
+    name: "Vanilla Cupcakes",
+    description: "Little vanilla cakes for a quick sweeth snack",
     price: 45.0,
     stock: 25,
-    category: "Accessories",
-    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
+    category: "Food",
+    image:
+      "https://res.cloudinary.com/df8lfmv1j/image/upload/v1783981271/deva-williamson-S2jw81lfrG0-unsplash_vsblud.jpg",
   },
   {
     name: "Ceramic Mug",

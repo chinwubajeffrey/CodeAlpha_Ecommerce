@@ -6,6 +6,7 @@ import ProductCard from "../components/ProductCard";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [err, setErr] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,8 +16,10 @@ const Products = () => {
         const { products, categories } = res.data;
         setProducts(products);
         setCategories(categories);
+        console.log(res.data);
       } catch (error) {
         console.log(error);
+        setErr("There was an error while fetching");
       } finally {
         setLoading(false);
       }
@@ -31,6 +34,7 @@ const Products = () => {
       ) : (
         <div>
           <NavBar />
+          <div>{err}</div>
           <div className="body">
             {products.map((pro) => (
               <div key={pro.id}>
