@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export const useAuthStore = create((set, get) => ({
+  clear: localStorage.clear(),
   user: JSON.parse(localStorage.getItem("user")) || null,
   token: localStorage.getItem("token") || null,
 

@@ -5,6 +5,8 @@ import ProductCard from "../components/ProductCard";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([]);
   const [categories, setCategories] = useState([]);
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(true);
@@ -35,9 +37,9 @@ const Products = () => {
         <div>
           <NavBar />
           <div>{err}</div>
-          <div className="body">
+          <div className=" flex justify-center gap-6 mt-6 flex-wrap bg-blue-300">
             {products.map((pro) => (
-              <div key={pro.id}>
+              <div key={pro.id} className=" flex w-[30%] h-full bg-amber-200">
                 <ProductCard product={pro} />
               </div>
             ))}

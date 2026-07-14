@@ -7,22 +7,26 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [loading, setLoading] = useState(false);
   const token = useAuthStore((state) => state.token);
   const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-
     try {
       const res = await API.post("/auth/login", { email, password });
       const { user, accessToken } = res.data;
       // console.log(res.data);-
 
       login(user, accessToken);
+      setLoading(false);
       return navigate("/products");
     } catch (err) {
       console.log(err);
+      setErrMsg("There was an error, Try again later");
     }
   };
 
@@ -35,6 +39,7 @@ const Login = () => {
       <div className="flex items-center justify-center  h-full w-[70%] bg-white">
         <div className="first basis-1/2 bg-white py-10 px-5 items-center justify-center flex flex-col h-full">
           <div className="box flex-col flex items-center justify-around  w-full">
+            <p className="text-5xl font-dyna text-black">{errMsg}</p>
             <h1 className="text-5xl m-5 font-dyna text-red-800">LOGIN</h1>
             <form
               onSubmit={handleSubmit}
