@@ -39,7 +39,7 @@ const Products = () => {
           <div>{err}</div>
           <div className=" flex justify-center gap-6 mt-6 flex-wrap bg-blue-300">
             {products.map((pro) => (
-              <div key={pro.id} className=" flex w-[30%] h-full bg-amber-200">
+              <div key={pro.id} className=" flex w-[25%] h-full bg-amber-200">
                 <ProductCard product={pro} />
               </div>
             ))}

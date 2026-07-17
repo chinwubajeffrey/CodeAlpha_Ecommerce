@@ -1,40 +1,38 @@
 import { create } from "zustand";
 import API from "../api/axios.js";
 
-export const usecartStore = create((set, get) => ({
+export const useCartStore = create((set, get) => ({
   items: [],
-  isLoading: false,
+  loading: false,
 
   fetchCart: async () => {
-    set({ isLoading: true });
-    const { data } = await api.get("/cart");
-    set({ items: data, isLoading: false });
+    set({ loading: true });
+    const { data } = await API.get("/cart");
+    set({ items: data, loading: false });
+    console.log(data);
   },
   addItem: async (productId, quantity = 1) => {
-    await api.post("/cart", { productId, quantity });
+    await API.post("/cart", { productId, quantity });
     get().fetchCart();
   },
 
   updateItem: async (itemId, quantity) => {
-    await api.patch(`/cart/${itemId}`, { quantity });
+    await API.patch(`/cart/${itemId}`, { quantity });
     get().fetchCart();
   },
 
   removeItem: async (itemId) => {
-    await api.delete(`/cart/${itemId}`);
+    await API.delete(`/cart/${itemId}`);
     get().fetchCart();
   },
 
   clearCart: () => set({ items: [] }),
 
-  get itemCount() {
-    return get().items.reduce((sum, item) => sum + item.quantity, 0);
-  },
+  itemCount: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
 
-  get total() {
-    return get().items.reduce(
+  total: () =>
+    get().items.reduce(
       (sum, item) => sum + item.product.price * item.quantity,
       0,
-    );
-  },
+    ),
 }));

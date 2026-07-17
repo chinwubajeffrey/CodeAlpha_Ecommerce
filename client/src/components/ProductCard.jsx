@@ -21,6 +21,7 @@ const ProductCard = ({ product }) => {
         productId: product.id,
         quantity: 1,
       });
+      navigate("/cart");
     } catch (error) {
       console.log(error);
     }
@@ -29,16 +30,16 @@ const ProductCard = ({ product }) => {
   return (
     <div
       onClick={cardDetails}
-      className="card p-4 flex w-full border border-amber-800 flex-col"
+      className="card p-4 flex w-full h-100 border border-amber-800 flex-col"
     >
-      <div className="img h-[50%]">
+      <div className="img h-[70%]">
         <img
           src={product.image}
           alt="product image"
           className="h-full w-full"
         />
       </div>
-      <div className="body h-[50%]">
+      <div className="body h-[30%]">
         <div className="text">
           <div className="cakename text-xl font-bold">{product.name}</div>
           <div className="des">{product.description}</div>

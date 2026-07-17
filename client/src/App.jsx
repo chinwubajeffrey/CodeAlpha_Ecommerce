@@ -1,5 +1,5 @@
 import { Navigate, BrowserRouter, Route, Routes } from "react-router-dom";
-import { usecartStore } from "./store/cartStore.js";
+import { useCartStore } from "./store/cartStore.js";
 import { useAuthStore } from "./store/authStore.js";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";

@@ -9,7 +9,7 @@ router.get("/cart", protect, async (req, res) => {
       where: { userId: req.user.id },
       include: { product: true },
     });
-    res.status(200).json({ cartItems });
+    res.status(200).json(cartItems);
   } catch (error) {
     console.log(error.message);
 

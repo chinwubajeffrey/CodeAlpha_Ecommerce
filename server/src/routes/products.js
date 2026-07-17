@@ -33,7 +33,7 @@ router.get("/products/:id", async (req, res) => {
     const product = await prisma.product.findUnique({
       where: { id: id },
     });
-    res.status(200).json({ product });
+    res.status(200).json(product);
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }
@@ -55,7 +55,9 @@ router.delete("/products/:id", protect, async (req, res) => {
     const findProduct = await prisma.product.delete({
       where: { id: id },
     });
-  } catch (error) {}
+  } catch (error) {
+    res.json({ message: error.message });
+  }
 });
 
 export default router;
