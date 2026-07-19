@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://cake-ecommerce-pi.vercel.app",
     credentials: true,
   }),
 );
@@ -19,5 +19,6 @@ app.use("/api/auth", AuthRouter);
 app.use("/api", ProductRouter);
 app.use("/api", ProductRouter);
 app.use("/api", CartRouter);
+app.use("/api", OrderRouter);
 
 app.listen(3000, () => console.log("app running on 3000"));

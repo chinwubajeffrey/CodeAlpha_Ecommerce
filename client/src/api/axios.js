@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://codealpha-ecommerce-0h2u.onrender.com",
 });
 
 API.interceptors.request.use((req) => {

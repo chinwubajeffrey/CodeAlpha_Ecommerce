@@ -30,16 +30,16 @@ const Products = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-pink-50">
       {loading ? (
         <div>Loading</div>
       ) : (
-        <div>
+        <div className="flex flex-col justify-center">
           <NavBar />
           <div>{err}</div>
-          <div className=" flex justify-center gap-6 mt-6 flex-wrap bg-blue-300">
+          <div className=" flex justify-center gap-6 mt-10 flex-wrap ">
             {products.map((pro) => (
-              <div key={pro.id} className=" flex w-[25%] h-full bg-amber-200">
+              <div key={pro.id} className=" flex w-[20%] h-full">
                 <ProductCard product={pro} />
               </div>
             ))}

@@ -47,14 +47,15 @@ router.post("/products", protect, (req, res) => {
 
 router.delete("/products/:id", protect, async (req, res) => {
   const id = req.params.id;
-  if (req.user.role !== "ADMIN") {
-    return res.status(403).json({ message: "Admin access required" });
-  }
+  // if (req.user.role !== "ADMIN") {
+  //   return res.status(403).json({ message: "Admin access required" });
+  // }
 
   try {
     const findProduct = await prisma.product.delete({
       where: { id: id },
     });
+    res.status(200).json({ message: "Product deleted" });
   } catch (error) {
     res.json({ message: error.message });
   }

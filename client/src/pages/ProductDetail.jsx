@@ -35,6 +35,8 @@ const ProductDetail = () => {
         productId: product.id,
         quantity: quant,
       });
+      navigate("/cart");
+      return;
     } catch (error) {
       console.log(error);
     }

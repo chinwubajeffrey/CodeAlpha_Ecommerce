@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
   return (
     <div
       onClick={cardDetails}
-      className="card p-4 flex w-full h-100 border border-amber-800 flex-col"
+      className="card p-4 flex w-full h-full bg-pink-400 rounded  flex-col"
     >
       <div className="img h-[70%]">
         <img
