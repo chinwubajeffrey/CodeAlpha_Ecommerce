@@ -17,7 +17,6 @@ app.use(
 app.use(express.json());
 app.use("/api/auth", AuthRouter);
 app.use("/api", ProductRouter);
-app.use("/api", ProductRouter);
 app.use("/api", CartRouter);
 app.use("/api", OrderRouter);
 
